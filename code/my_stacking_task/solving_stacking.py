@@ -15,8 +15,7 @@ class MyStackingTask(StackedBlocksGeneratorTask):
     def __init__(self, **kwargs):
         super().__init__(variables_space='space_a_b',
                          num_of_levels=4,
-                         tool_block_mass=0.08 ,
-                         block_min_size=0.030)
+                         tool_block_mass=0.08)
         self._task_robot_observation_keys = [
             "time_left_for_task", "joint_positions", "joint_velocities",
             "end_effector_positions"
@@ -29,7 +28,7 @@ class MyStackPolicy(BaseActorPolicy):
     def __init__(self):
 
         super(MyStackPolicy, self).__init__('stack_policy')
-        file="C:/Users/klakk/Documents/Me/ResearchPhD/CausalRobot/Tasks/stacking2/model.zip"
+        file="../../trained_models/stacking2_curr0/model.zip"
         self._policy = PPO2.load(file)
         return
 

@@ -34,7 +34,7 @@ class MyTowerPolicy(BaseActorPolicy):
     def __init__(self):
 
         super(MyTowerPolicy, self).__init__('tower_policy')
-        file="C:/Users/klakk/Documents/Me/ResearchPhD/CausalRobot/Tasks/tower_curr0/saved_model.zip"
+        file="../../trained_models/tower_curr0/saved_model.zip"
         self._policy = PPO2.load(file)
         return
 
